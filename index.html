@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<b>Wähle unten eine Kategorie aus, die zu dem passt nach dem du suchst.</b>
+<section>
+{% assign content = site.faq %}
+{% assign categories = content | map: "category" | uniq %}
+{% for category in categories %}
+    <details>
+        <summary>{{category}}</summary>
+        {% assign currentCatItems = content | where: "category", category%}
+        {% for item in currentCatItems %}
+        <details class="subcat">
+            <summary class="subcat">{{ item.subcategory }}</summary>
+            <ul>
+                {% assign links = currentCatItems | where: "subcategory", item.subcategory %}
+                {% for link in links %}
+                    <li class="sublink"><a href=".{{ link.url }}">{{link.title}}</a></li>
+                {% endfor %}
+            </ul>
+        </details>
+        {% endfor %}
+    </details>
+{% endfor %}
+</section>

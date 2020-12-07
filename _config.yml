@@ -1,0 +1,12 @@
+title: Ellental Technik-FAQ
+description: >-
+  Sammlung aller Anleitung zur Bedienung und Problembehandlung von IServ, Textverarbeitungsprogramme und Ähnlichem
+  mit Schwerpunkt auf die Verwendung an den Ellentalgymnasien.
+baseurl: "/technik-faq" # the subpath of your site, e.g. /blog
+url: "https://thecrazymaffin.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+theme: minima
+plugins:
+  - jekyll-feed
+collections:
+  faq:
+    output: true
